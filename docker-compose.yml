@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  catclientes:
+    container_name: api_materias
+    image: api_materias
+    build: .
+    ports:
+      - '5001:5001' 
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongoserver
+    image: mongo
+    ports:
+      - '27017:27017'
